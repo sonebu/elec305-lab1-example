@@ -10,14 +10,14 @@ end coffeemaker;
 
 architecture Behavioral of coffeemaker is
   signal pulse : std_logic := '0';
-  signal count : integer range 0 to 199999999 := 0;
+  signal count : integer range 0 to 99999999 := 0;
 begin
   process(clk, sw)
   begin
     if sw = '0' then
         pulse <= '0';
     elsif clk'event and clk = '1' then
-      if count = 199999999 then
+      if count = 99999999 then
         count <= 0;
         pulse <= not pulse;
       else
